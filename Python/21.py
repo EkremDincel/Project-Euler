@@ -26,6 +26,22 @@ def d(n):
             break
     return sum(set(prod(j) for i in range(len(l)) for j in combinations(l, i)))
 
+# another function
+def d(n):
+    dic = {}
+    k = n
+    for i in primes:
+        if not n % i:
+            n //= i
+            dic[i] = 1
+        while not n % i:
+            n //= i
+            dic[i] += 1
+
+        if n == 1:
+            break
+    return prod((i**(j+1) -1) / (i-1) for i, j in dic.items()) - k   
+
 
 def is_amicable(n):
     t = d(n)
