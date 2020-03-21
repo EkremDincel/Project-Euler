@@ -1,5 +1,3 @@
-from itertools import product
-
 def is_palindromic(number):
     number = str(number)
     return number[:3] == number[:2:-1]
@@ -12,7 +10,7 @@ s = 0
 while True:
     a -= 1
     if a == 0:
-        a = 999
+        a = b
         b -= 1
         if b == 0:
             break
