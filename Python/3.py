@@ -1,14 +1,4 @@
-def find_largest_prime_factor(n):
-    i = 2
-    while i * i <= n:
-        while not n % i:
-            n //= i
-            if i * i > n:
-                break
-        i += 1
-        
-    return n
-
+from utils import find_largest_prime_factor
 
 print(find_largest_prime_factor(600851475143))
 
@@ -24,6 +14,7 @@ print(find_largest_prime_factor(600851475143))
 
 
 ## test
+from sys import exit
 exit()
 from sympy import factorint
 def gpf(n):

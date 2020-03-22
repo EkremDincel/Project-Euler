@@ -1,16 +1,4 @@
-primes = [2]
+from utils.primes import primes, extend_primes_by_n
 
-def extend_primes(prime_list, n):
-    k = prime_list[-1]
-    j = 0
-    while j < n:
-        k += 1
-        for i in prime_list:
-            if not k % i:
-                break
-        else:
-            prime_list.append(k)
-            j += 1
-
-extend_primes(primes, 10000)
+extend_primes_by_n(primes, 10000)
 print(primes[-1])

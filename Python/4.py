@@ -1,20 +1,12 @@
+from utils import number_combinations
+
 def is_palindromic(number):
     number = str(number)
     return number[:3] == number[:2:-1]
 
 
-a = 999
-b = 999
-
 s = 0
-while True:
-    a -= 1
-    if a == 0:
-        a = b
-        b -= 1
-        if b == 0:
-            break
-
+for a, b in number_combinations(999, 999):
     k = a*b
     if s < k and is_palindromic(k):
         s = k
