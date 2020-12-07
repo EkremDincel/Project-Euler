@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 // ebob
 pub fn gcd(mut a: i64, mut b: i64) -> i64 {
 	while b != 0 {

@@ -42,6 +42,30 @@ impl Sieve {
 	}
 }
 
+impl Iterator for Sieve {
+	type Item = i64;
+
+	fn next(&mut self) -> Option<Self::Item> {
+		for i in (self.primes.last().unwrap() + 1).. {
+			let mut index = 0;
+			let mut cond = true;
+			while index < self.primes.len() {
+				let j = unsafe { self.primes.get_unchecked(index) };
+				if i%j == 0 {
+					cond = false;
+					break;
+				}
+				index += 1;
+			}
+			if cond {
+				self.primes.push(i);
+				return Some(i)
+			}
+		}
+		None
+	}
+}
+
 pub fn largest_prime_factor(mut num: i64) -> i64 {
 	let mut i = 2;
 	while i < num {

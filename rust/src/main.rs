@@ -3,8 +3,8 @@ mod iterutils;
 mod primes;
 mod divisors;
 
-mod q5;
+mod q10;
 
 fn main() {
-    println!("{}", q5::solution());
+    println!("{}", q10::solution());
 }

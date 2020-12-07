@@ -1,8 +1,10 @@
+use crate::divisors::lcms;
+
 pub fn solution() -> i64 {
-1
+	lcms((1..20).collect::<Vec<_>>().iter())
 }
 
 #[test]
 fn test() {
-	assert_eq!(6857, 6857);
+	assert_eq!(solution(), 232792560);
 }
